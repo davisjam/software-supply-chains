@@ -3,79 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Software Supply Chains — Duality Lab, Purdue University</title>
-<meta name="description" content="How do we establish and preserve trust in software dependencies, producers, provenance, and distribution?">
+<title>Software Supply Chains — James Davis, Purdue University</title>
+<meta name="description" content="How can software reuse remain trustworthy at ecosystem scale?">
 <link rel="canonical" href="https://davisjam.github.io/software-supply-chains/">
 <meta property="og:title" content="Software Supply Chains">
-<meta property="og:description" content="How do we establish and preserve trust in software dependencies, producers, provenance, and distribution?">
+<meta property="og:description" content="How can software reuse remain trustworthy at ecosystem scale?">
 <meta property="og:url" content="https://davisjam.github.io/software-supply-chains/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div class="wrap">
-
-<header class="site">
-  <p class="kicker">A research programme of the Duality Lab</p>
-  <h1>Software Supply Chains</h1>
-  <p class="thesis">How do we establish and preserve trust in software dependencies, producers, provenance, and distribution?</p>
+<header class="masthead">
+  <div class="who"><a href="https://davisjam.github.io/">James Davis, PhD</a></div>
+  <div class="role">Assistant Professor, Elmore Family School of Electrical and Computer
+    Engineering, Purdue University</div>
+  <nav><a href="https://davisjam.github.io/">Home</a><a href="https://davisjam.github.io/research/" aria-current="page">Research</a><a href="https://davisjam.github.io/publications/">Publications</a><a href="https://davisjam.github.io/teaching/">Teaching</a><a href="https://davisjam.github.io/service/">Service</a><a href="https://davisjam.github.io/about/">About me</a></nav>
 </header>
-
-<figure class="hero">
-  <img src="figures/trust-provenance-graph.svg" alt="Trust is a graph of evidence among actors, artifacts, and consuming contexts. Signing is one edge, not the whole problem.">
-  <figcaption>Trust is a graph of evidence among actors, artifacts, and consuming contexts. Signing is one edge, not the whole problem.</figcaption>
-</figure>
-<h2>Foundations</h2>
-<div class="agenda">
-<div><h3>What properties constitute a secure software supply chain</h3></div>
-<div><h3>Identity, provenance, signing, and trust</h3></div>
-<div><h3>Adoption and usability of security mechanisms</h3></div>
-<div><h3>Dependency decision-making</h3></div>
-<div><h3>Actor and reputation models</h3></div>
-<div><h3>Package-confusion detection</h3></div>
+<h1>Software Supply Chains</h1>
+<p class="lede">How can software reuse remain trustworthy at ecosystem scale?</p>
+<p>Modern software systems depend on components produced by people and organizations their developers may never meet. Package registries and build systems make that reuse inexpensive, but they also leave developers to decide which producers and artifacts to trust.</p>
+<p>We study the evidence available for those decisions. Some of our work examines identity, software signing, and provenance; other work studies whether developers can use those mechanisms effectively, how they assess dependencies, and how attackers exploit gaps in the distribution process.</p>
+<nav class="jump"><a href="#research">Research</a><a href="#applications">Applications</a><a href="#publications">Publications</a><a href="#support">Funding and support</a></nav>
+<h2 id="research">Research</h2>
+<div class="split">
+  <div><p>Signing can establish who vouched for an artifact. A valid signature does not tell a developer whether that producer is trustworthy, or whether the dependency is appropriate in a particular system. We therefore study both the mechanisms that carry evidence and the decisions developers make from it.</p>
+<p>On the mechanism side, we have measured signing across public package registries and examined what identity-based signing establishes in practice. On the decision side, we have interviewed practitioners about why signing is or is not adopted, studied how developers choose dependencies, and shown how naming and metadata become an attack surface when an ecosystem assumes that a familiar package name identifies a familiar producer.</p></div>
+  <figure>
+    <img src="figures/trust-provenance-graph.svg" alt="Evidence attaches to different edges: identity to the producer, provenance and signatures to the artifact, policy to the consuming system. Signing establishes one edge; whether the accumulated evidence suffices is decide">
+    <figcaption>Evidence attaches to different edges: identity to the producer, provenance and signatures to the artifact, policy to the consuming system. Signing establishes one edge; whether the accumulated evidence suffices is decided in context.</figcaption>
+  </figure>
 </div>
-<h2>Applications</h2>
-<div class="agenda">
-<div><h3>Pre-trained models</h3></div>
-<div><h3>Embedded software</h3></div>
-<div><h3>Research software</h3></div>
-<div><h3>Package ecosystems</h3></div>
-<div><h3>Agent ecosystems (emerging)</h3></div>
+<h2 id="applications">Applications</h2>
+<p>The same questions recur wherever software is assembled from artifacts produced elsewhere, and the newer ecosystems inherit the problem before they inherit the defences.</p>
+<p>Pre-trained models are distributed through registries much like packages, and a model file can execute code when it is loaded. Research software has supply chains of its own, with different incentives and less tooling. Agent ecosystems are beginning to distribute executable capability in the same way.</p>
+<div class="bib">
+<div class="yr">2026</div>
+<div class="e">
+<div class="ti">AgentHub: A Registry for Discoverable, Verifiable, and Reproducible AI Agents</div>
+<div class="vn">ICSE Journal Ahead Workshop (JAWs)</div>
 </div>
-<h2>Selected research</h2>
-<div class="pub"><div class="t">Why Johnny Adopts Identity-Based Software Signing: A Usability Case Study of Sigstore</div><div class="meta">Proceedings of the 35th USENIX Security Symposium (SECURITY) · 2026</div></div>
-<div class="pub"><div class="t">ConfuGuard: Using Metadata to Detect Active and Stealthy Package Confusion Attacks Accurately and at Scale</div><div class="meta">Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE) · 2026</div></div>
-<div class="pub"><div class="t">ARMS: A Vision for Actor Reputation Metric Systems in the Open-Source Software Supply Chain</div><div class="meta">ICSE Journal Ahead Workshop (JAWs) · 2026</div></div>
-<div class="pub"><div class="t">Towards a Benchmark for Dependency Decision-Making</div><div class="meta">ICSE Journal Ahead Workshop (JAWs) · 2026</div></div>
-<div class="pub"><div class="t">Operationalizing Research Software for Supply Chain Security</div><div class="meta">ICSE Journal Ahead Workshop (JAWs) · 2026</div></div>
-<div class="pub"><div class="t">A Longitudinal Study of Usability in Identity-Based Software Signing</div><div class="meta">arXiv · 2026</div></div>
-<div class="pub"><div class="t">ZTD-JAVA: Mitigating Software Supply Chain Vulnerabilities via Zero-Trust Dependencies</div><div class="meta">Proceedings of the ACM/IEEE 47th International Conference on Software Engineering (ICSE) · 2025</div><div class="links"><a href="https://doi.org/10.5281/zenodo.14436182">Artifact</a><a href="https://davisjam.medium.com/mitigating-software-supply-chain-vulnerabilities-with-zero-trust-dependencies-06f950497cfe">Blog</a></div></div>
-<div class="pub"><div class="t">An Industry Interview Study of Software Signing for Supply Chain Security</div><div class="meta">Proceedings of the 34th USENIX Security Symposium (SECURITY) · 2025</div><div class="links"><a href="https://zenodo.org/records/14766721">Artifact</a><a href="https://davisjam.medium.com/an-industry-interview-study-of-software-signing-for-supply-chain-security-8666d27539f8">Blog</a></div></div>
-<div class="pub"><div class="t">Establishing Provenance Before Coding: Traditional and Next-Gen Software Signing</div><div class="meta">IEEE Security &amp; Privacy Magazine -- Special Issue &#x27;Secure Software Before Codeing&#x27; · 2025</div></div>
-<div class="pub"><div class="t">Signing in Four Public Software Package Registries: Quantity, Quality, and Influencing Factors</div><div class="meta">Proceedings of the 45th IEEE Symposium on Security and Privacy (S&amp;P) · 2024</div><div class="links"><a href="https://github.com/PurdueDualityLab/signature-adoption">Artifact</a><a href="https://medium.com/@davisjam/signing-in-four-public-software-package-registries-quantity-quality-and-influencing-factors-7af4b416b6db">Blog</a></div></div>
-<div class="pub"><div class="t">An Empirical Study on Using Large Language Models to Analyze Software Supply Chain Security Failures</div><div class="meta">Proceedings of the 2nd ACM Workshop on Software Supply Chain Offensive Research and Ecosystem Defenses (SCORED) · 2023</div><div class="links"><a href="https://zenodo.org/record/8365116">Artifact</a></div></div>
-<div class="pub"><div class="t">SoK: Analysis of Software Supply Chain Security by Establishing Secure Design Properties</div><div class="meta">Proceedings of the 1st ACM Workshop on Software Supply Chain Offensive Research and Ecosystem Defenses (SCORED) · 2022</div><div class="links"><a href="https://medium.com/p/6a0c897d5777">Blog</a></div></div>
-<div class="pub"><div class="t">Context-Aware Trust Verification for Identity-Based Software Signing</div></div>
-<h2>The ideas, applied</h2>
-<div class="pub"><div class="t">AgentHub: A Registry for Discoverable, Verifiable, and Reproducible AI Agents</div><div class="meta">ICSE Journal Ahead Workshop (JAWs) · 2026</div></div>
-<div class="pub"><div class="t">PickleBall: Secure Deserialization of Pickle-based Machine Learning Models<span class="badge">best artifact</span></div><div class="meta">Proceedings of the 32nd ACM Conference on Computer and Communications Security (CCS) · 2025</div><div class="links"><a href="https://zenodo.org/records/16974645">Artifact</a><a href="https://davisjam.medium.com/pickleball-secure-deserialization-of-pickle-based-machine-learning-models-a089113e6b0f">Blog</a></div></div>
-<h2>Funding and support</h2>
-<ul class='funding'>
-<li><strong>US National Science Foundation #2537308</strong><br><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2537308">Collaborative Research: Planning: CROSS: Building a Community aROund Securing the Research Software Supply Chain</a></li>
-<li><strong>Socket, Inc.</strong> (2025)<br>Unrestricted Gift: Typosquat Detection in Open-Source Ecosystems</li>
-<li><strong>Google, LLC</strong> (2023)<br>Unrestricted Gift: Improving OSS Supply Chain Security by Promoting Software Signing</li>
-<li><strong>US National Science Foundation #2229703</strong><br><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2229703">POSE: Phase I: Scoping An Open-Source Ecosystem Around Proactive Software Supply Chain Monitoring</a></li>
-<li><strong>Cisco</strong> (2022&ndash;2023)<br>Monitor and manage security risks in software supply chains with Sigstore</li>
-</ul>
-
+<div class="yr">2025</div>
+<div class="e">
+<div class="ti">PickleBall: Secure Deserialization of Pickle-based Machine Learning Models<span class="award">Best Artifact</span></div>
+<div class="vn">Proceedings of the 32nd ACM Conference on Computer and Communications Security (CCS)</div>
+<div class="ln"><a href="https://zenodo.org/records/16974645">Artifact</a><a href="https://davisjam.medium.com/pickleball-secure-deserialization-of-pickle-based-machine-learning-models-a089113e6b0f">Blog</a></div>
+</div>
+</div>
+<h2 id="publications">Publications</h2>
+<div class="bib">
+<div class="yr">2026</div>
+<div class="e">
+<div class="ti">Why Johnny Adopts Identity-Based Software Signing: A Usability Case Study of Sigstore</div>
+<div class="vn">Proceedings of the 35th USENIX Security Symposium (SECURITY)</div>
+</div>
+<div class="e">
+<div class="ti">ConfuGuard: Using Metadata to Detect Active and Stealthy Package Confusion Attacks Accurately and at Scale</div>
+<div class="vn">Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE)</div>
+</div>
+<div class="e">
+<div class="ti">ARMS: A Vision for Actor Reputation Metric Systems in the Open-Source Software Supply Chain</div>
+<div class="vn">ICSE Journal Ahead Workshop (JAWs)</div>
+</div>
+<div class="e">
+<div class="ti">Towards a Benchmark for Dependency Decision-Making</div>
+<div class="vn">ICSE Journal Ahead Workshop (JAWs)</div>
+</div>
+<div class="e">
+<div class="ti">Operationalizing Research Software for Supply Chain Security</div>
+<div class="vn">ICSE Journal Ahead Workshop (JAWs)</div>
+</div>
+<div class="e">
+<div class="ti">A Longitudinal Study of Usability in Identity-Based Software Signing</div>
+<div class="vn">arXiv</div>
+</div>
+<div class="yr">2025</div>
+<div class="e">
+<div class="ti">ZTD-JAVA: Mitigating Software Supply Chain Vulnerabilities via Zero-Trust Dependencies</div>
+<div class="vn">Proceedings of the ACM/IEEE 47th International Conference on Software Engineering (ICSE)</div>
+<div class="ln"><a href="https://doi.org/10.5281/zenodo.14436182">Artifact</a><a href="https://davisjam.medium.com/mitigating-software-supply-chain-vulnerabilities-with-zero-trust-dependencies-06f950497cfe">Blog</a></div>
+</div>
+<div class="e">
+<div class="ti">An Industry Interview Study of Software Signing for Supply Chain Security</div>
+<div class="vn">Proceedings of the 34th USENIX Security Symposium (SECURITY)</div>
+<div class="ln"><a href="https://zenodo.org/records/14766721">Artifact</a><a href="https://davisjam.medium.com/an-industry-interview-study-of-software-signing-for-supply-chain-security-8666d27539f8">Blog</a></div>
+</div>
+<div class="e">
+<div class="ti">Establishing Provenance Before Coding: Traditional and Next-Gen Software Signing</div>
+<div class="vn">IEEE Security &amp; Privacy Magazine -- Special Issue &#x27;Secure Software Before Codeing&#x27;</div>
+</div>
+<div class="yr">2024</div>
+<div class="e">
+<div class="ti">Signing in Four Public Software Package Registries: Quantity, Quality, and Influencing Factors</div>
+<div class="vn">Proceedings of the 45th IEEE Symposium on Security and Privacy (S&amp;P)</div>
+<div class="ln"><a href="https://github.com/PurdueDualityLab/signature-adoption">Artifact</a><a href="https://medium.com/@davisjam/signing-in-four-public-software-package-registries-quantity-quality-and-influencing-factors-7af4b416b6db">Blog</a></div>
+</div>
+<div class="yr">2023</div>
+<div class="e">
+<div class="ti">An Empirical Study on Using Large Language Models to Analyze Software Supply Chain Security Failures</div>
+<div class="vn">Proceedings of the 2nd ACM Workshop on Software Supply Chain Offensive Research and Ecosystem Defenses (SCORED)</div>
+<div class="ln"><a href="https://zenodo.org/record/8365116">Artifact</a></div>
+</div>
+<div class="yr">2022</div>
+<div class="e">
+<div class="ti">SoK: Analysis of Software Supply Chain Security by Establishing Secure Design Properties</div>
+<div class="vn">Proceedings of the 1st ACM Workshop on Software Supply Chain Offensive Research and Ecosystem Defenses (SCORED)</div>
+<div class="ln"><a href="https://medium.com/p/6a0c897d5777">Blog</a></div>
+</div>
+<div class="yr">In preparation</div>
+<div class="e">
+<div class="ti">Context-Aware Trust Verification for Identity-Based Software Signing</div>
+</div>
+</div>
+<h2 id="support">Funding and support</h2>
+<p>This work has been supported by:</p>
+<dl class="support">
+<dt>US National Science Foundation</dt><dd><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2537308">Collaborative Research: Planning: CROSS: Building a Community aROund Securing the Research Software Supply Chain</a> (#2537308)</dd>
+<dt>Socket, Inc.</dt><dd>Unrestricted Gift: Typosquat Detection in Open-Source Ecosystems</dd>
+<dt>Google, LLC</dt><dd>Unrestricted Gift: Improving OSS Supply Chain Security by Promoting Software Signing</dd>
+<dt>US National Science Foundation</dt><dd><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2229703">POSE: Phase I: Scoping An Open-Source Ecosystem Around Proactive Software Supply Chain Monitoring</a> (#2229703)</dd>
+<dt>Cisco</dt><dd>Monitor and manage security risks in software supply chains with Sigstore</dd>
+</dl>
 <footer class="site">
-  <p>A research project of <a href="https://davisjam.github.io/">James C. Davis</a> ·
-     Duality Lab · Purdue University</p>
-  <p><a href="https://davisjam.github.io/">Research portfolio</a> ·
+  <p><a href="https://davisjam.github.io/research/">&larr; All research</a></p>
+  <p><a href="https://davisjam.github.io/">James Davis</a> ·
      <a href="https://davisjam.github.io/publications/">Publications</a> ·
-     <a href="https://github.com/davisjam/software-supply-chains">Repository</a></p>
+     <a href="https://davisjam.github.io/teaching/">Teaching</a></p>
 </footer>
-
 </div>
 </body>
 </html>
